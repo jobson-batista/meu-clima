@@ -1,6 +1,6 @@
-# Meu Tempo App
+# Meu Clima App
 
-"Meu Tempo" é um aplicativo simples e prático para visualizar as previsões do tempo no seu dia a dia. O app oferece alertas personalizados com base em suas atividades e condições climáticas preferidas.
+"Meu Clima" é um aplicativo simples e prático para visualizar as previsões do tempo no seu dia a dia. O app oferece alertas personalizados com base em suas atividades e condições climáticas preferidas.
 
 ## Funcionalidades
 
