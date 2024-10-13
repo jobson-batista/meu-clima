@@ -24,7 +24,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          cd MeuClima
+          pwd && ls -lha
           # Instale suas dependências aqui se necessário, por exemplo, CocoaPods ou Carthage
           # pod install ou carthage update
 
