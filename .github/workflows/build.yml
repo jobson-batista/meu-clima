@@ -27,12 +27,11 @@ jobs:
 
     - name: Build do projeto
       run: |
-        xcodebuild clean build \
-          -project MeuClima.xcodeproj \  # Use o .xcodeproj
-          -scheme MeuClima \
-          -destination 'platform=iOS Simulator,name=iPhone 12,OS=15.6' \
-          ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
-
+          xcodebuild clean build \
+            -project "Meu Clima.xcodeproj" \
+            -scheme "Meu Clima" \
+            -destination 'platform=iOS Simulator,name=iPhone 12,OS=15.6' \
+            ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
 #     - name: Testar o projeto
 #      run: |
 #       xcodebuild test \
