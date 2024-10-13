@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		A5D596EF2CB85E220085CBD4 /* Meu Clima.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meu Clima.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A54019FB2CBB3D6600FE9764 /* Meu Clima.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meu Clima.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -46,16 +46,8 @@
 			isa = PBXGroup;
 			children = (
 				A5D596F12CB85E220085CBD4 /* Meu Clima */,
-				A5D596F02CB85E220085CBD4 /* Products */,
+				A54019FB2CBB3D6600FE9764 /* Meu Clima.app */,
 			);
-			sourceTree = "<group>";
-		};
-		A5D596F02CB85E220085CBD4 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A5D596EF2CB85E220085CBD4 /* Meu Clima.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,7 +72,7 @@
 			packageProductDependencies = (
 			);
 			productName = "Meu Clima";
-			productReference = A5D596EF2CB85E220085CBD4 /* Meu Clima.app */;
+			productReference = A54019FB2CBB3D6600FE9764 /* Meu Clima.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -108,7 +100,7 @@
 			mainGroup = A5D596E62CB85E220085CBD4;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = A5D596F02CB85E220085CBD4 /* Products */;
+			productRefGroup = A5D596E62CB85E220085CBD4;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
