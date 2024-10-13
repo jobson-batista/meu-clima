@@ -4,10 +4,10 @@ on:
   push:
     branches:
       - main  # Executa o workflow quando houver push na branch main
-      - develop
   pull_request:
     branches:
       - main  # Executa o workflow quando houver PR na branch main
+      - develop
 
 jobs:
   build:
