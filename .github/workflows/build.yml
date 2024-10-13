@@ -27,7 +27,8 @@ jobs:
           pwd && ls -lha
           # Instale suas dependências aqui se necessário, por exemplo, CocoaPods ou Carthage
           # pod install ou carthage update
-
+      - name: List available simulators
+        run: xcrun simctl list devices
       - name: Build the project
         run: |
           xcodebuild clean build \
