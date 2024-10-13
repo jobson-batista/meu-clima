@@ -22,9 +22,9 @@ jobs:
 
     - name: Install dependencies
       run: |
-        brew install cocoapods # Instala dependências se usar Cocoapods
+        brew install cocoapods --formula # Instala dependências se usar Cocoapods
         pod install
 
     - name: Build iOS app without running tests
-      run: xcodebuild -workspace YourApp.xcworkspace -scheme YourApp -sdk iphonesimulator -configuration Release clean build CODE_SIGNING_ALLOWED=NO
+      run: xcodebuild -workspace MeuClima.xcworkspace -scheme MeuClima -sdk iphonesimulator -configuration Release clean build CODE_SIGNING_ALLOWED=NO
 
