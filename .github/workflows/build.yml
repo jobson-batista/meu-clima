@@ -1,30 +1,40 @@
-name: Build Meu Clima App
+name: Build and Test
 
 on:
   push:
     branches:
-      - main  # Rodar quando houver um push na branch main
-      - develop
+      - main  # Executa o workflow quando houver push na branch main
   pull_request:
     branches:
-      - main  # Rodar em pull requests para a branch main
+      - main  # Executa o workflow quando houver PR na branch main
+      - develop
 
 jobs:
   build:
-    runs-on: macos-latest  # Ambiente macOS para rodar o build do app iOS
+    runs-on: macos-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3  # Puxar o código do repositório
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Set up Xcode
-      run: sudo xcode-select -s /Applications/Xcode.app/Contents/Developer  # Configura Xcode
+      - name: Definir versão do Xcode 16
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '16.0'
 
-    - name: Install dependencies
-      run: |
-        brew install cocoapods # Instala dependências se usar Cocoapods
-        pod install
-
-    - name: Build iOS app without running tests
-      run: xcodebuild -workspace YourApp.xcworkspace -scheme YourApp -sdk iphonesimulator -configuration Release clean build CODE_SIGNING_ALLOWED=NO
-
+      - name: Instalando dependências
+        run: |
+          pwd && ls -lha
+          # Instale suas dependências aqui se necessário, por exemplo, CocoaPods ou Carthage
+          # pod install ou carthage update
+          
+      - name: Lista de simuladores disponíveis
+        run: xcrun simctl list devices
+        
+      - name: Build do Projeto
+        run: |
+          xcodebuild clean build \
+            -project "Meu Clima.xcodeproj" \
+            -scheme "Meu Clima" \
+            -destination 'platform=iOS Simulator,name=iPhone 14,OS=17.0.1' \
+            ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
