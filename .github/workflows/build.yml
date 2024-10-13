@@ -1,0 +1,30 @@
+name: Build Meu Clima App
+
+on:
+  push:
+    branches:
+      - main  # Rodar quando houver um push na branch main
+      - develop
+  pull_request:
+    branches:
+      - main  # Rodar em pull requests para a branch main
+
+jobs:
+  build:
+    runs-on: macos-latest  # Ambiente macOS para rodar o build do app iOS
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3  # Puxar o código do repositório
+
+    - name: Set up Xcode
+      run: sudo xcode-select -s /Applications/Xcode.app/Contents/Developer  # Configura Xcode
+
+    - name: Install dependencies
+      run: |
+        brew install cocoapods # Instala dependências se usar Cocoapods
+        pod install
+
+    - name: Build iOS app without running tests
+      run: xcodebuild -workspace YourApp.xcworkspace -scheme YourApp -sdk iphonesimulator -configuration Release clean build CODE_SIGNING_ALLOWED=NO
+
