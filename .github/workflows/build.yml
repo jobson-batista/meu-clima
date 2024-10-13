@@ -1,41 +1,37 @@
-name: Build
+name: Build and Test
 
 on:
   push:
     branches:
-      - main  # Execute a ação quando houver push na branch main
+      - main  # Executa o workflow quando houver push na branch main
       - develop
   pull_request:
     branches:
-      - main  # Execute também quando houver PR na branch main
+      - main  # Executa o workflow quando houver PR na branch main
 
 jobs:
   build:
     runs-on: macos-latest
 
     steps:
-    - name: Checkout do código
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Configurar o Xcode
-      run: sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
+      - name: Set up Xcode 16
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '16.0'
 
-    - name: Instalar dependências
-      run: |
-        # Se você usar SPM (Swift Package Manager), essa etapa será automática
-        # Caso não tenha dependências externas, pule esta etapa
+      - name: Install Dependencies
+        run: |
+          cd MeuClima
+          # Instale suas dependências aqui se necessário, por exemplo, CocoaPods ou Carthage
+          # pod install ou carthage update
 
-    - name: Build do projeto
-      run: |
+      - name: Build the project
+        run: |
           xcodebuild clean build \
             -project "Meu Clima.xcodeproj" \
             -scheme "Meu Clima" \
             -destination 'platform=iOS Simulator,name=iPhone 12,OS=15.6' \
             ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
-#     - name: Testar o projeto
-#      run: |
-#       xcodebuild test \
-#          -project YourApp.xcodeproj \  # Use o .xcodeproj
-#          -scheme YourApp \
-#          -destination 'platform=iOS Simulator,name=iPhone 12,OS=14.5' \
-#          ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
