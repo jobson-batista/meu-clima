@@ -14,8 +14,7 @@ class DailyForecastTableViewCell: UITableViewCell {
     private lazy var weekDayLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-//        label.text = "TER"
-        label.textColor = UIColor.constrastColor
+        label.textColor = UIColor.contrastColor
         label.textAlignment = .left
         label.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
         return label
@@ -24,8 +23,7 @@ class DailyForecastTableViewCell: UITableViewCell {
     private lazy var minTemperatureDayLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-//        label.text = "min 25°C"
-        label.textColor = UIColor.constrastColor
+        label.textColor = UIColor.contrastColor
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
         return label
@@ -34,8 +32,7 @@ class DailyForecastTableViewCell: UITableViewCell {
     private lazy var maxTemperatureDayLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-//        label.text = "max 25°C"
-        label.textColor = UIColor.constrastColor
+        label.textColor = UIColor.contrastColor
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
         return label
@@ -45,7 +42,6 @@ class DailyForecastTableViewCell: UITableViewCell {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
-//        imageView.image = UIImage(named: "cloud-icon")
         return imageView
     }()
     
