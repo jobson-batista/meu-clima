@@ -14,7 +14,7 @@ class DailyForecastTableViewCell: UITableViewCell {
     private lazy var weekDayLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "TER"
+//        label.text = "TER"
         label.textColor = UIColor.constrastColor
         label.textAlignment = .left
         label.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
@@ -24,7 +24,7 @@ class DailyForecastTableViewCell: UITableViewCell {
     private lazy var minTemperatureDayLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "min 25°C"
+//        label.text = "min 25°C"
         label.textColor = UIColor.constrastColor
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
@@ -34,7 +34,7 @@ class DailyForecastTableViewCell: UITableViewCell {
     private lazy var maxTemperatureDayLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "max 25°C"
+//        label.text = "max 25°C"
         label.textColor = UIColor.constrastColor
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
@@ -45,7 +45,7 @@ class DailyForecastTableViewCell: UITableViewCell {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(named: "cloud-icon")
+//        imageView.image = UIImage(named: "cloud-icon")
         return imageView
     }()
     
@@ -89,5 +89,12 @@ class DailyForecastTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             weekDayLabel.widthAnchor.constraint(lessThanOrEqualToConstant: 50)
         ])
+    }
+    
+    func loadData(weekDay: String?, min: String?, max: String?, icon: UIImage?) {
+        weekDayLabel.text = weekDay
+        minTemperatureDayLabel.text = "min \(min ?? "")"
+        maxTemperatureDayLabel.text = "max \(max ?? "")"
+        iconImageView.image = icon
     }
 }
