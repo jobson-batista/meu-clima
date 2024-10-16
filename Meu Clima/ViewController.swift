@@ -35,9 +35,7 @@ class ViewController: UIViewController {
         let label = UILabel() // Implicitamente o frame: .zero
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 25)
-//        label.font = UIFont(name: "Dosis-SemiBold", size: 25)
         label.textColor = UIColor.primaryColor
-//        label.text = "João Pessoa"
         label.textAlignment = .center
         return label
     }()
@@ -46,8 +44,6 @@ class ViewController: UIViewController {
         let label = UILabel() // Implicitamente o frame: .zero
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 70, weight: .bold)
-//        label.font = UIFont(name: "Dosis-SemiBold", size: 70)
-//        label.text = "25°C"
         label.textAlignment = .left
         label.textColor = UIColor.primaryColor
         return label
@@ -56,7 +52,6 @@ class ViewController: UIViewController {
     private lazy var weatherIcon: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        //imageView.image = UIImage(named: forecast?.weather.first?.icon ?? "")
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
@@ -66,8 +61,7 @@ class ViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Umidade"
         label.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
-//        label.font = UIFont(name: "Dosis-SemiBold", size: 15)
-        label.textColor = UIColor.constrastColor
+        label.textColor = UIColor.contrastColor
         return label
     }()
     
@@ -76,8 +70,7 @@ class ViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
 //        label.text = "1000mm"
         label.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
-//        label.font = UIFont(name: "Dosis-SemiBold", size: 15)
-        label.textColor = UIColor.constrastColor
+        label.textColor = UIColor.contrastColor
         return label
     }()
     
@@ -93,8 +86,7 @@ class ViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Vento"
         label.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
-        //label.font = UIFont(name: "Dosis-SemiBold", size: 15)
-        label.textColor = UIColor.constrastColor
+        label.textColor = UIColor.contrastColor
         return label
     }()
     
@@ -102,7 +94,7 @@ class ViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
-        label.textColor = UIColor.constrastColor
+        label.textColor = UIColor.contrastColor
         return label
     }()
     
@@ -134,7 +126,7 @@ class ViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "PREVISÃO POR HORA"
-        label.textColor = UIColor.constrastColor
+        label.textColor = UIColor.contrastColor
         label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
         label.textAlignment = .center
         return label
@@ -159,7 +151,7 @@ class ViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "PRÓXIMOS DIAS"
-        label.textColor = UIColor.constrastColor
+        label.textColor = UIColor.contrastColor
         label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
         label.textAlignment = .center
         return label
@@ -172,7 +164,8 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(DailyForecastTableViewCell.self, forCellReuseIdentifier: DailyForecastTableViewCell.identifier)
-        tableView.separatorColor = UIColor.constrastColor
+        tableView.separatorColor = UIColor.contrastColor
+        tableView.separatorInset = UIEdgeInsets.init(top: 0, left: 16, bottom: 0, right: 16)
         return tableView
     }()
     
@@ -211,10 +204,10 @@ class ViewController: UIViewController {
         } else {
             backgroundView.image = UIImage(named: "background-night")
             headerView.backgroundColor = .clear
-            headerView.layer.borderColor = UIColor.constrastColor?.cgColor
+            headerView.layer.borderColor = UIColor.contrastColor?.cgColor
             headerView.layer.borderWidth = 1
-            temperatureLabel.textColor = UIColor.constrastColor
-            cityLabel.textColor = UIColor.constrastColor
+            temperatureLabel.textColor = UIColor.contrastColor
+            cityLabel.textColor = UIColor.contrastColor
         }
         
         hourlyCollectionView.reloadData()
@@ -321,6 +314,7 @@ extension ViewController: UICollectionViewDataSource {
         cell.loadData(time: forecast?.dt.toHourFormat(),
                        icon: UIImage(named: forecast?.weather.first?.icon ?? ""),
                        temp: forecast?.temp.toCelsius())
+        //print(forecast?.temp.toCelsius() ?? 0)
         return cell
     }
     
