@@ -4,7 +4,7 @@
 
 ## Funcionalidades
 
-- [ ] Visualizar a previsão do tempo local
+- [X] Visualizar a previsão do tempo local
 - [ ] Configurar alertas personalizados para condições climáticas específicas
 
 ## Como usar
