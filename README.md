@@ -14,12 +14,16 @@
 
 ## Tecnologias usadas
 
-* Swift 6.0
-* UIkit 3.21
-* Xcode 16
+* [Swift 6.0]([url](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/aboutswift/))
+* [UIkit 3.21]([url](https://getuikit.com/docs/introduction))
+* [Xcode 16]([url](https://developer.apple.com/xcode/))
+* [Weather API]([url](https://openweathermap.org/api))
 
-## Screenshot
+## Screenshot v1
 
-![2EB0B76A-1EDA-456B-8BA4-66844F80B88F_4_5005_c](https://github.com/user-attachments/assets/115a911c-ede2-42de-a2bf-46de3ce3cffb)
-![D4810395-35F8-4A00-90CB-434864ACDEBF_4_5005_c](https://github.com/user-attachments/assets/4800d75d-10cc-4615-a041-1a3b59bed558)
+<div style="display: flex; justify-content: space-between;">
+  <img src="https://github.com/user-attachments/assets/b6a32087-1a57-46ee-bccd-76c9f5bf26b4" alt="Meu Clima - versão 1 - Tema Claro (Durante o dia entre 8h e 18h)" width="300" />
+  <img src="https://github.com/user-attachments/assets/679b4689-8db4-43fc-9f73-9d6030fbcb7d" alt="Meu Clima - versão 1 - Tema Escuro (Durante a noite entre 18h e 8h)" width="300" />
+</div>
+
 
