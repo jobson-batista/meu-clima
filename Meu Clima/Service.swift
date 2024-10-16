@@ -16,7 +16,7 @@ class Service {
     
     // configuracoes da API do OpenWeathermap
     private let BASE_URL: String = "https://api.openweathermap.org/data/3.0/onecall"
-    private let API_KEY: String = "60a2437743d6a0ec2d2a5f1f20d1e43c"
+    private let API_KEY: String = "YOUR_API_TOKEN"
     
     private let session = URLSession.shared // Usando um Singleton
     
