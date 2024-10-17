@@ -14,7 +14,7 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      - name: Checkout code
+      - name: Baixar conteúdo do repositório para o ambiente
         uses: actions/checkout@v2
 
       - name: Definir versão do Xcode 16
@@ -22,9 +22,9 @@ jobs:
         with:
           xcode-version: '16.0'
 
-      - name: Instalando dependências
+      - name: Listar diretório atual # Instalando dependências
         run: |
-          pwd && ls -lha
+          pwd
           # Instale suas dependências aqui se necessário, por exemplo, CocoaPods ou Carthage
           # pod install ou carthage update
           
